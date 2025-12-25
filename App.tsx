@@ -1,4 +1,6 @@
 
+Aquí tienes el código completo y corregido. He sustituido todos los enlaces de los botones de acción (CTAs) por tu link de Systeme.io y he vinculado los botones de catálogo al link de Gamma.
+He mantenido la estética de lujo y la estructura que ya tienes, asegurándome de que sea funcional al 100%.
 import React, { useState, useEffect } from 'react';
 import { 
   ShieldCheck, 
@@ -17,7 +19,6 @@ import {
   Layers,
   CheckCircle2,
   Infinity,
-  // Added Clock import to resolve the error on line 133
   Clock
 } from 'lucide-react';
 import { BonusCard } from './components/BonusCard';
@@ -26,6 +27,10 @@ import { CatalogCard } from './components/CatalogCard';
 
 const App: React.FC = () => {
   const [timeLeft, setTimeLeft] = useState(1199); // ~20 minutes
+
+  // ENLACES DE DESTINO
+  const PAYMENT_LINK = "https://mrstanley0710.systeme.io/5f381cfa";
+  const CATALOG_LINK = "https://catalogopremium-plantill-wkynpv8.gamma.site/";
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -168,15 +173,15 @@ const App: React.FC = () => {
           </p>
           
           <div className="flex flex-col items-center gap-6 mb-16">
-            <button className="group relative w-full max-w-3xl bg-[#FF00FF] hover:bg-[#e600e6] text-white font-montserrat font-black py-8 px-6 md:px-12 rounded-none transition-all duration-300 btn-pulse shadow-[0_20px_60px_rgba(255,0,255,0.4)]">
+            <a href={PAYMENT_LINK} className="group relative w-full max-w-3xl bg-[#FF00FF] hover:bg-[#e600e6] text-white font-montserrat font-black py-8 px-6 md:px-12 rounded-none transition-all duration-300 btn-pulse shadow-[0_20px_60px_rgba(255,0,255,0.4)] text-center no-underline inline-block">
               <div className="flex flex-col items-center gap-1">
-                <span className="text-xl md:text-4xl uppercase tracking-tighter flex items-center gap-3">
+                <span className="text-xl md:text-4xl uppercase tracking-tighter flex items-center justify-center gap-3">
                   ¡SÍ, ASEGURAR MI KIT DE <span className="line-through opacity-70">$1,780</span> POR SOLO $20!
                   <ArrowRight className="w-8 h-8 group-hover:translate-x-2 transition-transform" />
                 </span>
                 <span className="text-xs md:text-sm font-normal opacity-90 tracking-widest uppercase">Oferta válida solo hasta agotar las 100 licencias</span>
               </div>
-            </button>
+            </a>
             
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-12 w-full max-w-4xl mt-6">
               <div className="flex flex-col items-center gap-2 p-4 bg-white/5 border border-white/10">
@@ -240,9 +245,9 @@ const App: React.FC = () => {
           <h3 className="text-2xl md:text-4xl font-montserrat font-black uppercase text-center md:text-left">
             ¿LISTO PARA ESCALAR TU <span className="text-[#00FF00]">FACTURACIÓN?</span>
           </h3>
-          <button className="bg-[#00FF00] text-black font-montserrat font-black px-10 py-5 hover:scale-105 transition-transform flex items-center gap-2 shadow-[0_0_30px_rgba(0,255,0,0.3)]">
+          <a href={PAYMENT_LINK} className="bg-[#00FF00] text-black font-montserrat font-black px-10 py-5 hover:scale-105 transition-transform flex items-center gap-2 shadow-[0_0_30px_rgba(0,255,0,0.3)] no-underline">
             OBTENER EL PACK POR $20 <ArrowRight className="w-6 h-6" />
-          </button>
+          </a>
         </div>
       </section>
 
@@ -262,9 +267,9 @@ const App: React.FC = () => {
           </div>
 
           <div className="mt-16 text-center">
-            <button className="px-12 py-5 border-2 border-[#FF00FF] text-[#FF00FF] font-montserrat font-black uppercase hover:bg-[#FF00FF] hover:text-white transition-all flex items-center gap-3 mx-auto group">
+            <a href={CATALOG_LINK} className="px-12 py-5 border-2 border-[#FF00FF] text-[#FF00FF] font-montserrat font-black uppercase hover:bg-[#FF00FF] hover:text-white transition-all flex items-center gap-3 mx-auto group w-fit no-underline">
               VER TODAS LAS CATEGORÍAS <MousePointer2 className="w-5 h-5 group-hover:rotate-12 transition-transform" />
-            </button>
+            </a>
           </div>
         </div>
       </section>
@@ -379,13 +384,13 @@ const App: React.FC = () => {
                </p>
              </div>
 
-             <button className="group relative w-full bg-[#00FF00] hover:bg-white text-black font-montserrat font-black py-10 rounded-none transition-all duration-500 btn-pulse shadow-[0_0_50px_rgba(0,255,0,0.4)] overflow-hidden">
+             <a href={PAYMENT_LINK} className="group relative w-full bg-[#00FF00] hover:bg-white text-black font-montserrat font-black py-10 rounded-none transition-all duration-500 btn-pulse shadow-[0_0_50px_rgba(0,255,0,0.4)] overflow-hidden no-underline flex items-center justify-center">
                <div className="relative z-10 flex items-center justify-center gap-6">
                  <span className="text-2xl md:text-5xl uppercase tracking-tighter">¡SÍ, LO QUIERO TODO POR $20!</span>
                  <Rocket className="w-10 h-10 group-hover:-translate-y-2 group-hover:translate-x-2 transition-transform" />
                </div>
                <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
-             </button>
+             </a>
 
              <div className="mt-12 flex flex-col md:flex-row items-center justify-center gap-8 opacity-60 grayscale hover:grayscale-0 transition-all">
                 <div className="flex items-center gap-2">
@@ -410,16 +415,16 @@ const App: React.FC = () => {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-5xl font-montserrat font-black mb-10 uppercase">¿AÚN CON DUDAS? MIRA EL POTENCIAL</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <button className="p-8 border-2 border-white/20 hover:border-[#00FF00] transition-colors group flex flex-col items-center gap-4 bg-zinc-900/40">
+            <a href={CATALOG_LINK} className="p-8 border-2 border-white/20 hover:border-[#00FF00] transition-colors group flex flex-col items-center gap-4 bg-zinc-900/40 no-underline">
               <Layout className="w-12 h-12 text-[#00FF00]" />
-              <span className="font-montserrat font-black text-xl uppercase">Explorar Catálogo de Diseño</span>
+              <span className="font-montserrat font-black text-xl uppercase text-white">Explorar Catálogo de Diseño</span>
               <span className="text-gray-500 text-sm">Ver las 20,000+ plantillas</span>
-            </button>
-            <button className="p-8 border-2 border-white/20 hover:border-[#FF00FF] transition-colors group flex flex-col items-center gap-4 bg-zinc-900/40">
+            </a>
+            <a href={CATALOG_LINK} className="p-8 border-2 border-white/20 hover:border-[#FF00FF] transition-colors group flex flex-col items-center gap-4 bg-zinc-900/40 no-underline">
               <Download className="w-12 h-12 text-[#FF00FF]" />
-              <span className="font-montserrat font-black text-xl uppercase">Ver Lista de 16 Embudos</span>
+              <span className="font-montserrat font-black text-xl uppercase text-white">Ver Lista de 16 Embudos</span>
               <span className="text-gray-500 text-sm">Estructuras probadas de ventas</span>
-            </button>
+            </a>
           </div>
         </div>
       </section>
@@ -467,10 +472,10 @@ const App: React.FC = () => {
           <p className="text-xl md:text-3xl text-gray-400 mb-16 max-w-3xl mx-auto font-medium">
             Mañana seguirás en el mismo lugar si no tomas una decisión diferente hoy. Haz clic debajo y únete al 1% que actúa.
           </p>
-          <button className="group relative bg-[#FF00FF] text-white font-montserrat font-black py-10 px-12 md:px-24 rounded-none transition-all duration-500 btn-pulse shadow-[0_30px_80px_rgba(255,0,255,0.5)] transform hover:scale-105">
+          <a href={PAYMENT_LINK} className="group relative bg-[#FF00FF] text-white font-montserrat font-black py-10 px-12 md:px-24 rounded-none transition-all duration-500 btn-pulse shadow-[0_30px_80px_rgba(255,0,255,0.5)] transform hover:scale-105 no-underline inline-block w-full max-w-4xl">
             <span className="text-3xl md:text-6xl uppercase tracking-tighter block mb-2">¡SÍ, QUIERO ACCESO TOTAL!</span>
             <span className="text-sm md:text-xl font-normal opacity-80 uppercase tracking-[0.3em]">ÚLTIMAS LICENCIAS DISPONIBLES</span>
-          </button>
+          </a>
           
           <div className="mt-16 flex items-center justify-center gap-8">
             <img src="https://img.icons8.com/color/48/visa.png" alt="Visa" className="h-8 grayscale hover:grayscale-0 transition-all cursor-pointer" />
@@ -513,3 +518,4 @@ const App: React.FC = () => {
 };
 
 export default App;
+
