@@ -158,10 +158,10 @@ const App: React.FC = () => {
           </div>
           
           <h1 className="text-4xl md:text-8xl font-montserrat font-black leading-[0.9] mb-8 uppercase tracking-tighter">
-            EL ARSENAL DIGITAL DEFINITIVO PARA CONSTRUIR <br />
-            <span className="line-through text-red-600 opacity-40">$1,780 USD</span> <br />
+            EL ARSENAL DIGITAL DEFINITIVO DE <br />
+            <span className="line-through text-red-500">$1,780 USD</span> <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF00FF] via-white to-[#00FF00]">
-              UN IMPERIO SIN SER UN EXPERTO 
+              PARA MONTAR UN IMPERIO SIN SER UN EXPERTO 
             </span>
           </h1>
           
