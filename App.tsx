@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+iimport React, { useState, useEffect } from 'react';
 import { 
   ShieldCheck, 
   Zap, 
@@ -367,7 +367,7 @@ const App: React.FC = () => {
                 </div>
                 <div className="flex items-center gap-3 text-lg">
                    <CheckCircle2 className="text-[#00FF00] shrink-0" />
-                   <span>Licencia PLR (Vende y Gana)</span>
+                   <span>Licencia PLR embudos (Vende y Gana)</span>
                 </div>
                 <div className="flex items-center gap-3 text-lg">
                    <CheckCircle2 className="text-[#00FF00] shrink-0" />
