@@ -115,7 +115,7 @@ const App: React.FC = () => {
       a: "Nuestra misión es democratizar el acceso a herramientas de alta calidad. Queremos que el precio no sea una barrera para tu libertad financiera, sino un trampolín. Preferimos volumen y testimonios que una barrera de entrada alta."
     },
     {
-      q: "¿Puedo vender o revender los PLR?",
+      q: "¿Puedo vender o revender los embudos?",
       a: "¡Absolutamente! Tienes derechos de marca privada (PLR). Puedes editarlos, ponerles tu nombre, cambiar el diseño y quedarte con el 100% de las ganancias en cada venta."
     },
     {
@@ -154,7 +154,7 @@ const App: React.FC = () => {
         <div className="container mx-auto px-4 relative z-10 text-center">
           <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full border border-[#00FF00] bg-[#00FF00]/5 text-[#00FF00] font-bold text-xs mb-8 animate-pulse shadow-[0_0_20px_rgba(0,255,0,0.1)]">
             <Zap className="w-4 h-4" />
-            <span>SISTEMA DE INGRESOS PASIVOS PLR ACTIVADO</span>
+            <span>SISTEMA DE INGRESOS PASIVOS ACTIVADO</span>
           </div>
           
           <h1 className="text-4xl md:text-8xl font-montserrat font-black leading-[0.9] mb-8 uppercase tracking-tighter">
