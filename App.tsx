@@ -1,4 +1,5 @@
-iimport React, { useState, useEffect } from 'react';
+
+import React, { useState, useEffect } from 'react';
 import { 
   ShieldCheck, 
   Zap, 
@@ -296,7 +297,7 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* 4. Sección de Bonos Individuales */}
+      {/* 4. Sección de Bonos Individuales EDITADA */}
       <section className="py-24 border-t border-white/5">
         <div className="container mx-auto px-4">
           <div className="text-center mb-20">
@@ -306,7 +307,22 @@ const App: React.FC = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {bonuses.map((bonus) => (
-              <BonusCard key={bonus.id} {...bonus} />
+              <div key={bonus.id} className="flex flex-col">
+                <BonusCard {...bonus} />
+                <a 
+                  href={PAYMENT_LINK} 
+                  className="mt-4 block w-full bg-white text-black font-montserrat font-black py-5 px-4 rounded-none hover:bg-[#00FF00] transition-all duration-300 text-center no-underline shadow-[0_10px_30px_rgba(255,255,255,0.1)] group"
+                >
+                  <div className="flex flex-col items-center leading-tight">
+                    <span className="text-lg md:text-xl uppercase tracking-tighter group-hover:scale-105 transition-transform">
+                      ¡ACCEDER ANTES $1,780 AHORA $20 USD!
+                    </span>
+                    <span className="text-xs font-bold opacity-70 italic mt-1">
+                      DISPONIBLE POR TIEMPO LIMITADO
+                    </span>
+                  </div>
+                </a>
+              </div>
             ))}
           </div>
         </div>
@@ -515,4 +531,3 @@ const App: React.FC = () => {
 };
 
 export default App;
-
