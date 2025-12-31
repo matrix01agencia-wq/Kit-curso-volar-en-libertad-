@@ -83,7 +83,7 @@ const App: React.FC = () => {
     },
     {
       id: 5,
-      title: "Mega-Almacén Canva (40,000 Recursos)",
+      title: "Mega-Almacén Canva (10,000 Recursos editables)",
       description: "Ahorra años de diseño. Plantillas para feeds, stories, anuncios y presentaciones de nivel profesional para cualquier nicho.",
       value: 197,
       images: [
@@ -166,7 +166,7 @@ const App: React.FC = () => {
           </h1>
           
           <p className="text-lg md:text-3xl text-gray-400 max-w-4xl mx-auto mb-12 font-medium leading-tight">
-            Consigue el Workshop <span className="text-white">'Volar en Libertad'</span>, más de <span className="text-white">20,000 Plantillas Web</span> y los <span className="text-white">16 Embudos Maestros</span> que han facturado miles.
+            Consigue el Workshop <span className="text-white">'Volar en Libertad'</span>, más de <span className="text-white">10,000 Plantillas Web</span> y los <span className="text-white">16 Embudos Maestros</span> que han facturado miles.
           </p>
           
           <div className="flex flex-col items-center gap-6 mb-16">
@@ -435,7 +435,7 @@ const App: React.FC = () => {
           </div>
           <h2 className="text-4xl md:text-7xl font-montserrat font-black mb-8 uppercase tracking-tighter leading-none">TU ÉXITO ESTÁ <br /> <span className="text-[#FF00FF]">BLINDADO</span></h2>
           <p className="text-xl md:text-2xl leading-relaxed font-bold max-w-3xl mx-auto italic mb-12">
-            "Tienes 7 días completos para devorar el material. Si no sientes que esto ha cambiado las reglas del juego para ti, envíame un email y te devuelvo el 100% de tu dinero. Te quedas con el acceso como regalo por haberme dado tu tiempo. Así de seguro estoy de lo que tengo aquí."
+            "Tienes 7 días completos para devorar el material. Si no sientes que los embudos o las paginas web no te funcionan, envíame un email y te devuelvo el 100% de tu dinero. Te quedas con el acceso como regalo por haberme dado tu tiempo. Así de seguro estoy de lo que tengo aquí."
           </p>
           <div className="flex justify-center gap-4">
             <div className="w-32 h-1 bg-black"></div>
