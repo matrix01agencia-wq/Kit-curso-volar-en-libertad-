@@ -1,4 +1,148 @@
 import React, { useState, useEffect } from 'react';
+import {
+  ShieldCheck, Zap, Package, Lock, ArrowRight, TrendingUp, Layout,
+  MousePointer2, Rocket, Download, DollarSign, Globe, Star,
+  Layers, CheckCircle2, Infinity, Quote
+} from 'lucide-react';
+
+import { BonusCard } from './components/BonusCard';
+import { FAQItem } from './components/FAQItem';
+import { CatalogCard } from './components/CatalogCard';
+
+const HeroSection = ({ PAYMENT_LINK }: { PAYMENT_LINK: string }) => (
+  <section className="pt-32 pb-24 bg-black text-center border-b border-white/10">
+    <div className="container mx-auto px-4 max-w-5xl">
+
+      <span className="inline-block mb-6 px-6 py-2 text-xs font-black uppercase tracking-widest border border-[#00FF00] text-[#00FF00]">
+        🔥 Oferta de lanzamiento disponible hoy
+      </span>
+
+      <h1 className="text-4xl md:text-6xl font-montserrat font-black mb-6 leading-tight">
+        Acceso vitalicio a embudos y recursos digitales <br />
+        <span className="text-[#00FF00]">listos para vender</span>
+      </h1>
+
+      <p className="text-lg md:text-2xl text-gray-400 mb-10">
+        Más de <strong className="text-white">20,000 recursos premium</strong> +
+        Workshop paso a paso para lanzar tu primer producto digital
+        <strong className="text-white"> sin ser experto</strong>.
+      </p>
+
+      <a
+        href={PAYMENT_LINK}
+        className="inline-block bg-[#00FF00] text-black font-montserrat font-black px-12 py-6 text-xl hover:scale-105 transition-transform shadow-[0_0_40px_rgba(0,255,0,0.4)] no-underline"
+      >
+        Acceder ahora por $20 USD
+      </a>
+
+      <p className="mt-4 text-xs text-gray-500 font-bold uppercase tracking-widest">
+        ✅ Pago seguro · ✅ Acceso inmediato · ✅ Garantía 7 días
+      </p>
+    </div>
+  </section>
+);
+
+const TrustBar = () => (
+  <section className="py-10 bg-zinc-950 border-b border-white/5">
+    <div className="container mx-auto px-4 grid grid-cols-3 gap-6 text-center">
+      <div>
+        <div className="text-3xl font-black text-[#00FF00]">20,000+</div>
+        <div className="text-xs uppercase text-gray-400">Recursos Digitales</div>
+      </div>
+      <div>
+        <div className="text-3xl font-black text-[#00FF00]">LATAM</div>
+        <div className="text-xs uppercase text-gray-400">Enfoque Regional</div>
+      </div>
+      <div>
+        <div className="text-3xl font-black text-[#00FF00]">100%</div>
+        <div className="text-xs uppercase text-gray-400">Licencia Comercial</div>
+      </div>
+    </div>
+  </section>
+);
+
+const AntiObjections = () => (
+  <section className="py-20 bg-black border-b border-white/10">
+    <div className="container mx-auto px-4 max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div>
+        <h2 className="text-4xl font-montserrat font-black mb-6">
+          Por qué esto es diferente
+        </h2>
+        <ul className="space-y-4 text-gray-400">
+          <li>❌ No es un curso de teoría infinita</li>
+          <li>❌ No necesitas ser diseñador ni programador</li>
+          <li>❌ No necesitas mostrar tu cara</li>
+        </ul>
+      </div>
+      <div>
+        <ul className="space-y-4 text-gray-200 font-bold">
+          <li>✅ Acceso inmediato a la base de datos</li>
+          <li>✅ Recursos listos para descargar y vender</li>
+          <li>✅ Licencia comercial (el 100% es tuyo)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+const SocialProof = () => (
+  <section className="py-20 bg-zinc-950 border-b border-white/10">
+    <div className="container mx-auto px-4 max-w-5xl">
+      <h3 className="text-3xl md:text-4xl font-montserrat font-black text-center mb-12">
+        El arsenal que toda agencia digital necesitaba en 2026
+      </h3>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {[
+          ["Recuperé los $20 vendiendo mi primer embudo en 3 días.", "Carlos R., Colombia"],
+          ["Las plantillas me ahorraron semanas de trabajo técnico.", "Elena M., México"],
+          ["La mejor inversión que hice este año.", "Jorge V., Chile"],
+        ].map(([text, name], i) => (
+          <div key={i} className="p-6 bg-black border border-white/10">
+            <Quote className="text-[#FF00FF]/20 mb-4" />
+            <p className="italic text-gray-300 mb-4">"{text}"</p>
+            <span className="text-xs uppercase font-black text-[#00FF00]">{name}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+  
+);
+
+
+const App: React.FC = () => {
+  const [timeLeft, setTimeLeft] = useState(1199);
+
+  const PAYMENT_LINK = "https://mrstanley0710.systeme.io/5f381cfa";
+  const CATALOG_LINK = "https://catalogopremium-plantill-wkynpv8.gamma.site/";
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft((prev) => (prev > 0 ? prev - 1 : 0));
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const formatTime = (seconds: number) => {
+    const mins = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+  };
+
+  return (
+    <div className="bg-black text-white">
+
+      {/* 🔥 NUEVA PRELANDING PARA TRÁFICO FRÍO */}
+      <HeroSection PAYMENT_LINK={PAYMENT_LINK} />
+      <TrustBar />
+      <AntiObjections />
+      <SocialProof />
+
+      {/* 🔥 DESDE AQUÍ EMPIEZA TU LANDING ORIGINAL SIN CAMBIOS */}
+      {/* TODO: pega exactamente todo tu contenido original desde la Urgency Bar */}
+
+
+      import React, { useState, useEffect } from 'react';
 import { 
   ShieldCheck, 
   Zap, 
@@ -23,127 +167,10 @@ import { BonusCard } from './components/BonusCard';
 import { FAQItem } from './components/FAQItem';
 import { CatalogCard } from './components/CatalogCard';
 
-// --- NUEVOS COMPONENTES AGREGADOS ---
-
-const HeroSection = ({ PAYMENT_LINK }: { PAYMENT_LINK: string }) => (
-  <section className="relative bg-white pt-16 pb-20 px-4 text-center">
-    <div className="max-w-4xl mx-auto text-center">
-      <span className="bg-[#00FF00]/10 text-[#4a044e] px-4 py-1 rounded-full text-sm font-bold mb-6 inline-block">
-        🔥 OFERTA DE LANZAMIENTO DISPONIBLE HOY
-      </span>
-      <h1 className="text-4xl md:text-6xl font-serif font-bold text-gray-900 mb-6 leading-tight">
-        Acceso vitalicio a <span className="text-[#FF00FF]">embudos y recursos</span> listos para vender.
-      </h1>
-      <p className="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
-        Más de 20,000 recursos premium + Workshop paso a paso para lanzar tu primer producto digital sin ser experto.
-      </p>
-      <div className="flex flex-col items-center gap-4">
-        <a href={PAYMENT_LINK} className="bg-[#FF00FF] text-white px-8 py-4 rounded-xl text-xl font-bold hover:scale-105 transition-transform shadow-lg no-underline inline-block">
-          Acceder ahora por $20 USD
-        </a>
-        <p className="text-sm text-gray-500 flex items-center gap-2">
-          <span>✅ Pago seguro</span> • <span>✅ Acceso inmediato</span>
-        </p>
-      </div>
-    </div>
-  </section>
-);
-
-const TrustBar = () => (
-  <div className="bg-gray-50 border-y border-gray-200 py-8">
-    <div className="max-w-6xl mx-auto px-4 flex flex-wrap justify-center gap-8 md:gap-16 opacity-70">
-      <div className="text-center text-black">
-        <p className="text-2xl font-bold text-[#FF00FF]">+20,000</p>
-        <p className="text-xs uppercase tracking-widest font-black">Recursos Digitales</p>
-      </div>
-      <div className="text-center text-black">
-        <p className="text-2xl font-bold text-[#FF00FF]">LATAM</p>
-        <p className="text-xs uppercase tracking-widest font-black">Enfoque Regional</p>
-      </div>
-      <div className="text-center text-black">
-        <p className="text-2xl font-bold text-[#FF00FF]">100%</p>
-        <p className="text-xs uppercase tracking-widest font-black">Licencia Comercial</p>
-      </div>
-    </div>
-  </div>
-);
-
-const AntiObjections = () => (
-  <section className="py-16 bg-gray-900 text-white">
-    <div className="max-w-5xl mx-auto px-4">
-      <h2 className="text-3xl font-serif text-center mb-12 uppercase font-black">Por qué esto es diferente</h2>
-      <div className="grid md:grid-cols-2 gap-8">
-        <div className="space-y-4">
-          <p className="flex items-center gap-3 text-red-400 font-bold">
-            <span>❌</span> No es un curso de teoría infinita.
-          </p>
-          <p className="flex items-center gap-3 text-red-400 font-bold">
-            <span>❌</span> No necesitas ser diseñador ni programador.
-          </p>
-          <p className="flex items-center gap-3 text-red-400 font-bold">
-            <span>❌</span> No necesitas mostrar tu cara en cámaras.
-          </p>
-        </div>
-        <div className="space-y-4">
-          <p className="flex items-center gap-3 text-[#00FF00] font-bold">
-            <span>✅</span> Acceso inmediato a la base de datos.
-          </p>
-          <p className="flex items-center gap-3 text-[#00FF00] font-bold">
-            <span>✅</span> Recursos listos para descargar y vender.
-          </p>
-          <p className="flex items-center gap-3 text-[#00FF00] font-bold">
-            <span>✅</span> Licencia comercial (el 100% de la venta es tuyo).
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-);
-
-const SocialProof = () => (
-  <section className="py-16 bg-white">
-    <div className="max-w-4xl mx-auto px-4 text-center">
-      <h3 className="text-2xl font-bold mb-8 italic text-black uppercase font-black">"El arsenal que toda agencia digital necesitaba en 2026"</h3>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="p-6 border rounded-xl shadow-sm italic text-gray-600">
-          "Recuperé los $20 USD vendiendo mi primer embudo a un cliente local en 3 días."
-          <p className="mt-4 font-bold text-black text-sm">— Carlos R., Colombia</p>
-        </div>
-        <div className="p-6 border rounded-xl shadow-sm italic text-gray-600">
-          "Las plantillas de ChatAssistant me ahorraron semanas de trabajo técnico."
-          <p className="mt-4 font-bold text-black text-sm">— Elena M., México</p>
-        </div>
-        <div className="p-6 border rounded-xl shadow-sm italic text-gray-600">
-          "Es la inversión con mejor retorno que he hecho este año."
-          <p className="mt-4 font-bold text-black text-sm">— Jorge V., Chile</p>
-        </div>
-      </div>
-    </div>
-  </section>
-);
-
-const Guarantee = ({ PAYMENT_LINK }: { PAYMENT_LINK: string }) => (
-  <section className="py-12 border-t bg-gray-50">
-    <div className="max-w-3xl mx-auto px-4 text-center">
-      <div className="inline-block p-4 bg-white rounded-full shadow-md mb-6">
-        <span className="text-4xl text-black">🛡️</span>
-      </div>
-      <h2 className="text-2xl font-bold mb-4 text-black uppercase font-black">Garantía Incondicional de 7 Días</h2>
-      <p className="text-gray-600 mb-8 font-medium">
-        Si accedes al contenido y sientes que no vale al menos 10 veces lo que pagaste, envíanos un correo y te devolvemos el 100% de tu dinero. Sin preguntas, sin complicaciones.
-      </p>
-      <a href={PAYMENT_LINK} className="bg-[#FF00FF] text-white px-10 py-5 rounded-full text-2xl font-black hover:scale-105 transition-all animate-pulse shadow-2xl no-underline inline-block">
-        ¡ACCEDER POR $20 USD AHORA!
-      </a>
-    </div>
-  </section>
-);
-
-// --- COMPONENTE PRINCIPAL ---
-
 const App: React.FC = () => {
   const [timeLeft, setTimeLeft] = useState(1199); // ~20 minutes
 
+  // ENLACES DE DESTINO
   const PAYMENT_LINK = "https://mrstanley0710.systeme.io/5f381cfa";
   const CATALOG_LINK = "https://catalogopremium-plantill-wkynpv8.gamma.site/";
 
@@ -274,14 +301,10 @@ const App: React.FC = () => {
       </div>
 
       {/* Hero Section */}
-      <HeroSection PAYMENT_LINK={PAYMENT_LINK} />
-
-      {/* Trust Bar */}
-      <TrustBar />
-
-      {/* Hero Section (Original - Manteniendo para estructura visual) */}
-      <section className="relative pt-12 pb-24 overflow-hidden">
+      <section className="relative pt-32 pb-24 overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-[600px] bg-gradient-to-b from-[#4a044e]/30 via-[#000000]/80 to-[#000000] pointer-events-none"></div>
+        <div className="absolute top-40 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#FF00FF]/10 blur-[120px] rounded-full pointer-events-none"></div>
+
         <div className="container mx-auto px-4 relative z-10 text-center">
           <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full border border-[#00FF00] bg-[#00FF00]/5 text-[#00FF00] font-bold text-xs mb-8 animate-pulse shadow-[0_0_20px_rgba(0,255,0,0.1)]">
             <Zap className="w-4 h-4" />
@@ -289,13 +312,30 @@ const App: React.FC = () => {
           </div>
           
           <h1 className="text-4xl md:text-8xl font-montserrat font-black leading-[0.9] mb-8 uppercase tracking-tighter">
-            EL ARSENAL DIGITAL DEFINITIVO <br />
+            EL ARSENAL DIGITAL DEFINITIVO DE <br />
+            <span className="line-through text-red-500">$1,780 USD</span> <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF00FF] via-white to-[#00FF00]">
-              PARA MONTAR UN IMPERIO
+              PARA MONTAR UN IMPERIO SIN SER UN EXPERTO 
             </span>
           </h1>
           
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-12 w-full max-w-4xl mx-auto mt-6">
+          <p className="text-lg md:text-3xl text-gray-400 max-w-4xl mx-auto mb-12 font-medium leading-tight">
+            Consigue el Workshop <span className="text-white">'Volar en Libertad'</span>, más de <span className="text-white">10,000 Plantillas Web</span> y los <span className="text-white">16 Embudos Maestros</span> que han facturado miles.
+          </p>
+          
+          <div className="flex flex-col items-center gap-6 mb-16">
+            <a href={PAYMENT_LINK} className="group relative w-full max-w-3xl bg-[#FF00FF] hover:bg-[#e600e6] text-white font-montserrat font-black py-8 px-6 md:px-12 rounded-none transition-all duration-300 btn-pulse shadow-[0_20px_60px_rgba(255,0,255,0.4)] text-center no-underline inline-block">
+              <div className="flex flex-col items-center gap-1">
+                <span className="text-xl md:text-4xl uppercase tracking-tighter flex items-center justify-center gap-3">
+                  ASEGURAR MI LICENCIA
+                  <ArrowRight className="w-8 h-8 group-hover:translate-x-2 transition-transform" />
+                </span>
+                <span className="text-xs md:text-sm font-normal opacity-90 tracking-widest uppercase line-through text-red-300">$1,780 USD</span>
+                <span className="text-lg font-black text-[#00FF00] uppercase">SÓLO POR $20 USD HOY</span>
+              </div>
+            </a>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-12 w-full max-w-4xl mt-6">
               <div className="flex flex-col items-center gap-2 p-4 bg-white/5 border border-white/10">
                 <Package className="w-8 h-8 text-[#00FF00]" />
                 <span className="text-[10px] font-black uppercase text-gray-300">20k+ RECURSOS PREMIUM</span>
@@ -308,15 +348,10 @@ const App: React.FC = () => {
                 <ShieldCheck className="w-8 h-8 text-[#00FF00]" />
                 <span className="text-[10px] font-black uppercase text-gray-300">LIBERTAD TOTAL PLR</span>
               </div>
+            </div>
           </div>
         </div>
       </section>
-
-      {/* Anti Objections Section */}
-      <AntiObjections />
-
-      {/* Social Proof Section */}
-      <SocialProof />
 
       {/* Problem / Solution Section */}
       <section className="py-24 bg-zinc-950">
@@ -334,6 +369,10 @@ const App: React.FC = () => {
                 <CheckCircle2 className="w-6 h-6 text-red-500 shrink-0 mt-1" />
                 <span>Basta de pagar miles de dólares a diseñadores y copywriters mediocres.</span>
               </p>
+              <p className="flex items-start gap-4">
+                <CheckCircle2 className="w-6 h-6 text-red-500 shrink-0 mt-1" />
+                <span>Basta de tener una gran idea pero no tener las herramientas para ejecutarla.</span>
+              </p>
             </div>
             <div className="mt-12 p-8 bg-black border-l-4 border-[#00FF00]">
               <p className="text-2xl font-montserrat font-bold text-white italic">
@@ -342,23 +381,47 @@ const App: React.FC = () => {
             </div>
           </div>
           <div className="relative">
-            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800" alt="Dashboard" className="relative z-10 border border-white/10 shadow-2xl" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#FF00FF]/20 to-[#00FF00]/20 blur-3xl rounded-full"></div>
+            <img 
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800" 
+              alt="Dashboard de Ventas" 
+              className="relative z-10 border border-white/10 shadow-2xl reflection-effect"
+            />
           </div>
+        </div>
+      </section>
+
+      {/* CTA INTERMEDIO 1 */}
+      <section className="py-12 bg-[#FF00FF]/5 border-y border-[#FF00FF]/20 text-center">
+        <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-8">
+          <h3 className="text-2xl md:text-4xl font-montserrat font-black uppercase text-center md:text-left">
+            ¿LISTO PARA ESCALAR TU <span className="text-[#00FF00]">FACTURACIÓN?</span>
+          </h3>
+          <a href={PAYMENT_LINK} className="bg-[#00FF00] text-black font-montserrat font-black px-10 py-5 hover:scale-105 transition-transform flex flex-col items-center gap-1 shadow-[0_0_30px_rgba(0,255,0,0.3)] no-underline">
+            <span className="uppercase text-lg">ASEGURAR MI LICENCIA</span>
+            <span className="text-[10px] font-bold line-through opacity-60">$1,780 USD</span>
+          </a>
         </div>
       </section>
 
       {/* Template Catalog Section */}
       <section className="py-24 bg-black">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl md:text-6xl font-montserrat font-black mb-12 uppercase">Explora el <span className="text-[#FF00FF]">Catálogo Maestro</span></h2>
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <span className="text-[#00FF00] font-black tracking-widest text-sm uppercase mb-2 block">VISTA PREVIA DEL ARSENAL</span>
+            <h2 className="text-4xl md:text-6xl font-montserrat font-black mb-6 uppercase">Explora el <span className="text-[#FF00FF]">Catálogo Maestro</span></h2>
+            <p className="text-gray-400 max-w-2xl mx-auto text-lg">Más de 20,000 plantillas organizadas por categorías listas para descargar y usar en segundos.</p>
+          </div>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {catalogCategories.map((cat, i) => (
               <CatalogCard key={i} {...cat} />
             ))}
           </div>
-          <div className="mt-16">
+
+          <div className="mt-16 text-center">
             <a href={CATALOG_LINK} className="px-12 py-5 border-2 border-[#FF00FF] text-[#FF00FF] font-montserrat font-black uppercase hover:bg-[#FF00FF] hover:text-white transition-all flex items-center gap-3 mx-auto group w-fit no-underline">
-              VER TODAS LAS CATEGORÍAS <MousePointer2 className="w-5 h-5" />
+              VER TODAS LAS CATEGORÍAS <MousePointer2 className="w-5 h-5 group-hover:rotate-12 transition-transform" />
             </a>
           </div>
         </div>
@@ -367,36 +430,41 @@ const App: React.FC = () => {
       {/* The 3-Step Process */}
       <section className="py-24 bg-gradient-to-b from-black to-zinc-950">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-6xl font-montserrat font-black text-center mb-20 uppercase tracking-tighter">TU CAMINO A LA <span className="text-[#00FF00]">LIBERTAD</span></h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative text-center">
+          <h2 className="text-4xl md:text-6xl font-montserrat font-black text-center mb-20 uppercase">TU CAMINO A LA <span className="text-[#00FF00]">LIBERTAD</span></h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+            <div className="absolute top-1/2 left-0 w-full h-1 bg-gradient-to-r from-[#FF00FF] to-[#00FF00] hidden md:block opacity-20 -translate-y-1/2"></div>
+            
             {[
-              { icon: <Download />, title: "DESCARGA", desc: "Accede instantáneamente a todo el almacén." },
-              { icon: <Layout />, title: "PERSONALIZA", desc: "Pon tu marca en menos de 5 minutos." },
-              { icon: <DollarSign />, title: "VENDE", desc: "Quédate con el 100% de las ganancias." }
+              { icon: <Download />, title: "DESCARGA", desc: "Accede instantáneamente a todo el almacén de recursos en la nube." },
+              { icon: <Layout />, title: "PERSONALIZA", desc: "Pon tu marca, cambia colores o textos en Canva en menos de 5 minutos." },
+              { icon: <DollarSign />, title: "VENDE", desc: "Lanza tu producto y quédate con el 100% de las ganancias para siempre." }
             ].map((step, i) => (
-              <div key={i} className="relative z-10 bg-black border border-white/10 p-10 group">
-                <div className="w-20 h-20 bg-[#111] border border-[#FF00FF]/30 rounded-full flex items-center justify-center mx-auto mb-6 text-[#FF00FF]">
+              <div key={i} className="relative z-10 bg-black border border-white/10 p-10 text-center hover:border-[#FF00FF] transition-all group">
+                <div className="w-20 h-20 bg-[#111] border border-[#FF00FF]/30 rounded-full flex items-center justify-center mx-auto mb-6 text-[#FF00FF] group-hover:scale-110 transition-transform">
                   {React.cloneElement(step.icon as React.ReactElement, { size: 40 })}
                 </div>
                 <h4 className="text-3xl font-montserrat font-black mb-4 uppercase">{step.title}</h4>
                 <p className="text-gray-400">{step.desc}</p>
+                <div className="absolute -top-4 -right-4 w-12 h-12 bg-[#FF00FF] text-white flex items-center justify-center font-black text-xl italic">0{i+1}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Sección de Bonos Individuales */}
+      {/* 4. Sección de Bonos Individuales */}
       <section className="py-24 border-t border-white/5">
         <div className="container mx-auto px-4">
           <div className="text-center mb-20">
             <h2 className="text-4xl md:text-7xl font-montserrat font-black uppercase mb-4 tracking-tighter">EL BOTÍN DE <span className="text-[#FF00FF]">GUERRA</span></h2>
+            <p className="text-gray-400 text-xl font-medium">Cada bono individual vale más que la inversión total de hoy.</p>
           </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {bonuses.map((bonus) => (
               <div key={bonus.id} className="flex flex-col gap-4">
                 <BonusCard {...bonus} />
-                <a href={PAYMENT_LINK} className="w-full bg-[#00FF00] text-black font-montserrat font-black py-4 flex flex-col items-center no-underline">
+                <a href={PAYMENT_LINK} className="w-full bg-[#00FF00] text-black font-montserrat font-black py-4 flex flex-col items-center no-underline hover:brightness-110 transition-all">
                    <span className="uppercase text-sm">ASEGURAR MI LICENCIA</span>
                    <span className="text-[10px] line-through opacity-70">VALOR ${bonus.value} USD INCLUIDO</span>
                 </a>
@@ -406,43 +474,171 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* Testimonios Casos de Éxito Originales */}
+      {/* NUEVA SECCIÓN: 6 TESTIMONIOS ESTRATÉGICOS */}
       <section className="py-24 bg-zinc-950 border-y border-white/5">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl md:text-6xl font-montserrat font-black mb-16 uppercase">CASOS DE <span className="text-[#00FF00]">ÉXITO</span></h2>
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl md:text-6xl font-montserrat font-black text-center mb-16 uppercase">
+            CASOS DE <span className="text-[#00FF00]">ÉXITO</span>
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {testimonials.map((t, i) => (
-              <div key={i} className="p-8 bg-black border border-white/10 text-left">
-                <Quote className="text-[#FF00FF]/20 w-10 h-10 mb-4" />
-                <p className="text-gray-300 italic mb-6">"{t.text}"</p>
-                <div className="font-black uppercase text-white tracking-tighter">{t.name}</div>
+              <div key={i} className="p-8 bg-black border border-white/10 relative">
+                <Quote className="absolute top-4 right-4 text-[#FF00FF]/20 w-10 h-10" />
+                <div className="flex gap-1 mb-4 text-[#00FF00]">
+                  {[...Array(5)].map((_, star) => <Star key={star} size={16} fill="currentColor" />)}
+                </div>
+                <p className="text-gray-300 italic mb-6 leading-relaxed">"{t.text}"</p>
+                <div>
+                  <div className="font-black uppercase text-white tracking-tighter">{t.name}</div>
+                  <div className="text-xs text-[#FF00FF] font-bold">{t.role}</div>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Precio Final Section */}
-      <section className="py-32 relative overflow-hidden text-center">
-        <div className="container mx-auto px-4 max-w-4xl relative z-10">
-          <h2 className="text-4xl md:text-7xl font-montserrat font-black uppercase mb-4 tracking-tighter">VALOR TOTAL: <span className="text-[#00FF00]">$1,780 USD</span></h2>
-          <div className="bg-black/80 backdrop-blur-xl p-8 md:p-20 border-2 border-white/10 shadow-2xl relative">
-             <div className="text-8xl md:text-[12rem] font-montserrat font-black text-[#FF00FF] leading-none mb-10">$20</div>
-             <a href={PAYMENT_LINK} className="group w-full bg-[#00FF00] text-black font-montserrat font-black py-10 rounded-none no-underline flex flex-col items-center justify-center">
-                <span className="text-2xl md:text-5xl uppercase tracking-tighter">ASEGURAR MI LICENCIA</span>
-                <span className="text-xs md:text-lg font-bold line-through opacity-60">$1,780 USD TACHADO / SÓLO $20 AHORA</span>
-             </a>
+      {/* Social Proof / Stats */}
+      <section className="py-20 bg-[#00FF00]">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-black text-center">
+            <div>
+              <div className="text-4xl md:text-6xl font-montserrat font-black mb-2">12k+</div>
+              <div className="text-sm font-bold uppercase tracking-widest">ALUMNOS ACTIVOS</div>
+            </div>
+            <div>
+              <div className="text-4xl md:text-6xl font-montserrat font-black mb-2">40k+</div>
+              <div className="text-sm font-bold uppercase tracking-widest">RECURSOS EDITABLES</div>
+            </div>
+            <div>
+              <div className="text-4xl md:text-6xl font-montserrat font-black mb-2">$0</div>
+              <div className="text-sm font-bold uppercase tracking-widest">COSTOS OCULTOS</div>
+            </div>
+            <div>
+              <div className="text-4xl md:text-6xl font-montserrat font-black mb-2">100%</div>
+              <div className="text-sm font-bold uppercase tracking-widest">GARANTIZADO</div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Guarantee Section */}
-      <Guarantee PAYMENT_LINK={PAYMENT_LINK} />
+      {/* 5. Sección de Precio Final */}
+      <section className="py-32 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-[#4a044e]/20 to-black"></div>
+        <div className="container mx-auto px-4 max-w-4xl relative z-10 text-center">
+          <h2 className="text-4xl md:text-7xl font-montserrat font-black uppercase mb-4 leading-none tracking-tighter">
+            VALOR TOTAL DEL <br /> <span className="text-[#00FF00]">ARSENAL: $1,780 USD</span>
+          </h2>
+          <p className="text-xl md:text-3xl text-gray-400 mb-16 font-medium italic">"Esto no es una compra, es el robo del siglo a tu favor."</p>
+          
+          <div className="bg-black/80 backdrop-blur-xl p-8 md:p-20 border-2 border-white/10 shadow-[0_0_100px_rgba(255,0,255,0.15)] relative overflow-hidden">
+             <div className="absolute top-0 right-0 p-6 bg-[#FF00FF] text-white font-black text-xl rotate-12 translate-x-6 -translate-y-6 shadow-2xl">
+                OFERTA LOCA
+             </div>
+             
+             <h3 className="text-4xl font-montserrat font-black text-[#00FF00] mb-8 uppercase tracking-widest">ACCESO VITALICIO MAESTRO</h3>
+             <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-10">
+                <span className="text-3xl text-gray-500 line-through font-bold decoration-red-600 decoration-4">$1,780 USD</span>
+                <span className="text-8xl md:text-[12rem] font-montserrat font-black text-[#FF00FF] leading-none">$20</span>
+             </div>
 
-      {/* FAQ Section */}
+             <div className="space-y-4 mb-12 text-left max-w-lg mx-auto">
+                <div className="flex items-center gap-3 text-lg">
+                   <CheckCircle2 className="text-[#00FF00] shrink-0" />
+                   <span>Acceso a los 6 Bonos VIP</span>
+                </div>
+                <div className="flex items-center gap-3 text-lg">
+                   <CheckCircle2 className="text-[#00FF00] shrink-0" />
+                   <span>20,000+ Plantillas Premium</span>
+                </div>
+                <div className="flex items-center gap-3 text-lg">
+                   <CheckCircle2 className="text-[#00FF00] shrink-0" />
+                   <span>Licencia PLR embudos (Vende y Gana)</span>
+                </div>
+                <div className="flex items-center gap-3 text-lg">
+                   <CheckCircle2 className="text-[#00FF00] shrink-0" />
+                   <span>Actualizaciones de por vida gratis</span>
+                </div>
+             </div>
+             
+             <div className="bg-[#FF00FF]/10 p-8 rounded-none mb-12 text-left border-l-8 border-[#FF00FF]">
+               <p className="text-sm md:text-lg text-gray-200 font-medium leading-relaxed italic">
+                 "Atención: Este precio de $20 es estrictamente para las primeras 100 personas. Una vez alcanzado el cupo, el sistema automáticamente subirá el precio a $197 sin previo aviso. No dejes pasar tu libertad por el precio de una pizza."
+               </p>
+             </div>
+
+             <a href={PAYMENT_LINK} className="group relative w-full bg-[#00FF00] hover:bg-white text-black font-montserrat font-black py-10 rounded-none transition-all duration-500 btn-pulse shadow-[0_0_50px_rgba(0,255,0,0.4)] overflow-hidden no-underline flex items-center justify-center">
+               <div className="relative z-10 flex flex-col items-center justify-center gap-2">
+                 <span className="text-2xl md:text-5xl uppercase tracking-tighter flex items-center gap-4">
+                    ASEGURAR MI LICENCIA <Rocket className="w-10 h-10 group-hover:-translate-y-2 transition-transform" />
+                 </span>
+                 <span className="text-xs md:text-lg font-bold line-through opacity-60">$1,780 USD TACHADO / SÓLO $20 AHORA</span>
+               </div>
+               <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
+             </a>
+
+             <div className="mt-12 flex flex-col md:flex-row items-center justify-center gap-8 opacity-60 grayscale hover:grayscale-0 transition-all">
+                <div className="flex items-center gap-2">
+                   <Lock className="w-5 h-5" />
+                   <span className="text-[10px] font-black uppercase">Seguridad SSL 256-bit</span>
+                </div>
+                <div className="flex items-center gap-2 border-x border-white/20 px-8">
+                   <Globe className="w-5 h-5" />
+                   <span className="text-[10px] font-black uppercase">Soporte Mundial 24/7</span>
+                </div>
+                <div className="flex items-center gap-2">
+                   <Star className="w-5 h-5 text-yellow-500" />
+                   <span className="text-[10px] font-black uppercase">4.9/5 Calificación</span>
+                </div>
+             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Access Catalog Again CTA */}
+      <section className="py-24 border-t border-white/10">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-5xl font-montserrat font-black mb-10 uppercase">¿AÚN CON DUDAS? MIRA EL POTENCIAL</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <a href={CATALOG_LINK} className="p-8 border-2 border-white/20 hover:border-[#00FF00] transition-colors group flex flex-col items-center gap-4 bg-zinc-900/40 no-underline">
+              <Layout className="w-12 h-12 text-[#00FF00]" />
+              <span className="font-montserrat font-black text-xl uppercase text-white">Explorar Catálogo de Diseño</span>
+              <span className="text-gray-500 text-sm">Ver las 20,000+ plantillas</span>
+            </a>
+            <a href={CATALOG_LINK} className="p-8 border-2 border-white/20 hover:border-[#FF00FF] transition-colors group flex flex-col items-center gap-4 bg-zinc-900/40 no-underline">
+              <Download className="w-12 h-12 text-[#FF00FF]" />
+              <span className="font-montserrat font-black text-xl uppercase text-white">Ver Lista de 16 Embudos</span>
+              <span className="text-gray-500 text-sm">Estructuras probadas de ventas</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. Garantía */}
+      <section className="py-24 bg-white text-black relative">
+        <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-black to-transparent pointer-events-none"></div>
+        <div className="container mx-auto px-4 max-w-4xl text-center">
+          <div className="mb-10 inline-block p-6 rounded-full bg-black text-[#00FF00] shadow-2xl scale-110">
+            <ShieldCheck className="w-24 h-24" />
+          </div>
+          <h2 className="text-4xl md:text-7xl font-montserrat font-black mb-8 uppercase tracking-tighter leading-none">TU ÉXITO ESTÁ <br /> <span className="text-[#FF00FF]">BLINDADO</span></h2>
+          <p className="text-xl md:text-2xl leading-relaxed font-bold max-w-3xl mx-auto italic mb-12">
+            "Tienes 7 días completos para devorar el material. Si no sientes que los embudos o las paginas web no te funcionan, envíame un email y te devuelvo el 100% de tu dinero. Te quedas con el acceso como regalo por haberme dado tu tiempo. Así de seguro estoy de lo que tengo aquí."
+          </p>
+          <div className="flex justify-center gap-4">
+            <div className="w-32 h-1 bg-black"></div>
+            <div className="w-32 h-1 bg-[#FF00FF]"></div>
+            <div className="w-32 h-1 bg-black"></div>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. FAQ */}
       <section className="py-32 bg-zinc-950">
         <div className="container mx-auto px-4 max-w-3xl">
-          <h2 className="text-5xl md:text-7xl font-montserrat font-black text-center mb-20 uppercase tracking-tighter leading-none">OBJECIONES <br /> <span className="text-[#00FF00]">ANIQUILADAS</span></h2>
+          <h2 className="text-5xl md:text-7xl font-montserrat font-black text-center mb-20 uppercase tracking-tighter leading-none">
+            OBJECIONES <br /> <span className="text-[#00FF00]">ANIQUILADAS</span>
+          </h2>
           <div className="space-y-6">
             {faqs.map((faq, idx) => (
               <FAQItem key={idx} {...faq} />
@@ -451,12 +647,56 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-20 border-t border-white/10 bg-black text-center">
+      {/* FINAL FINAL CTA */}
+      <section className="py-32 bg-black border-t border-white/10 relative overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_rgba(255,0,255,0.05)_0%,_transparent_70%)]"></div>
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h2 className="text-4xl md:text-8xl font-montserrat font-black mb-12 uppercase tracking-tighter">
+            ¿LIBERTAD O <br /> <span className="text-gray-600">EXCUSAS?</span>
+          </h2>
+          <p className="text-xl md:text-3xl text-gray-400 mb-16 max-w-3xl mx-auto font-medium">
+            Mañana seguirás en el mismo lugar si no tomas una decisión diferente hoy. Haz clic debajo y únete al 1% que actúa.
+          </p>
+          <a href={PAYMENT_LINK} className="group relative bg-[#FF00FF] text-white font-montserrat font-black py-10 px-12 md:px-24 rounded-none transition-all duration-500 btn-pulse shadow-[0_30px_80px_rgba(255,0,255,0.5)] transform hover:scale-105 no-underline inline-block w-full max-w-4xl">
+            <div className="flex flex-col items-center gap-2">
+              <span className="text-3xl md:text-6xl uppercase tracking-tighter block">ASEGURAR MI LICENCIA</span>
+              <span className="text-sm md:text-xl font-normal opacity-80 uppercase tracking-[0.3em] line-through">$1,780 USD TACHADO / $20 HOY</span>
+            </div>
+          </a>
+          
+          <div className="mt-16 flex items-center justify-center gap-8">
+            <img src="https://img.icons8.com/color/48/visa.png" alt="Visa" className="h-8 grayscale hover:grayscale-0 transition-all cursor-pointer" />
+            <img src="https://img.icons8.com/color/48/mastercard.png" alt="Mastercard" className="h-8 grayscale hover:grayscale-0 transition-all cursor-pointer" />
+            <img src="https://img.icons8.com/color/48/paypal.png" alt="Paypal" className="h-8 grayscale hover:grayscale-0 transition-all cursor-pointer" />
+            <img src="https://img.icons8.com/color/48/stripe.png" alt="Stripe" className="h-8 grayscale hover:grayscale-0 transition-all cursor-pointer" />
+          </div>
+        </div>
+      </section>
+
+      {/* 8. Footer */}
+      <footer className="py-20 border-t border-white/10 bg-black">
         <div className="container mx-auto px-4">
-          <h4 className="text-2xl font-montserrat font-black text-white mb-4 uppercase tracking-widest">PLR MASTER PACK</h4>
-          <div className="text-gray-700 text-[10px] uppercase font-bold tracking-widest">
-            © {new Date().getFullYear()} Mega Pack PLR Master. Todos los derechos reservados.
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-16 items-center mb-16">
+            <div className="text-center md:text-left">
+              <h4 className="text-2xl font-montserrat font-black text-white mb-4 uppercase">PLR MASTER PACK</h4>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                Empoderando a emprendedores digitales con herramientas de conversión masiva y libertad de marca.
+              </p>
+            </div>
+            <div className="flex flex-col md:flex-row justify-center gap-8 text-gray-500 text-[10px] font-black uppercase tracking-widest text-center">
+              <a href="#" className="hover:text-[#FF00FF] transition-colors">Términos</a>
+              <a href="#" className="hover:text-[#FF00FF] transition-colors">Privacidad</a>
+              <a href="#" className="hover:text-[#FF00FF] transition-colors">Cookies</a>
+              <a href="#" className="hover:text-[#FF00FF] transition-colors">Contacto</a>
+            </div>
+            <div className="flex justify-center md:justify-end gap-4">
+              <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white transition-colors cursor-pointer"><Globe size={20} /></div>
+              <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white transition-colors cursor-pointer"><Infinity size={20} /></div>
+            </div>
+          </div>
+          <div className="text-center text-gray-700 text-[10px] uppercase font-bold tracking-widest">
+            © {new Date().getFullYear()} Mega Pack PLR Master. Todos los derechos reservados. <br />
+            No estamos afiliados con Facebook, Meta, Google ni ninguna red social de forma directa.
           </div>
         </div>
       </footer>
@@ -465,4 +705,3 @@ const App: React.FC = () => {
 };
 
 export default App;
-
